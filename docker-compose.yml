@@ -1,0 +1,40 @@
+version: "3.4"
+services:
+  data_service:
+    image: "data-service"
+    build:
+      context: ./ds/
+      dockerfile: ./DS.Dockerfile
+    environment:
+      DB_HOST: mongodb
+    ports:
+      - 4000:4000
+    volumes:
+      - ./data-service/:/usr/src/app/data-service
+    links:
+      - mongodb
+
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+
+  ui:
+    image: "ui"
+    environment:
+      NODE_ENV: production
+      DS_HOST: experts_service
+    build:
+      context: ./ui/
+      dockerfile: ./UI.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ui/:/usr/src/app/ui
+    # links:
+    #   - experts_service
+
+volumes:
+  data:
