@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport ExpertForm from '../add';\n\nvar EditPage = function EditPage() {\n  return /*#__PURE__*/_jsx(ExpertForm, {});\n};\n\nexport default EditPage;","map":null,"metadata":{},"sourceType":"module"}

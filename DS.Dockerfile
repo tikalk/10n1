@@ -1,4 +1,4 @@
-FROM node:14.18
+FROM node:14.16-alpine
 ENV PORT 4000
 
 # RUN mkdir -p /usr/src/app/data-service
