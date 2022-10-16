@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui
+  labels:
+    app: ui
+    project: 10n1
+spec:
+  selector:
+    matchLabels:
+      app: ui
+      project: 10n1
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ui
+        project: 10n1
+    spec:
+      serviceAccountName: 10n1
+      containers:
+        - name: ui
+          image: registry.gitlab.com/tikalk.com/innovation/10n1/ui:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: NEXT_PUBLIC_DS_HOST
+              value: "ds"
+            - name: NEXT_PUBLIC_DS_PORT
+              value: "4000"

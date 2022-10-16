@@ -1,0 +1,25 @@
+---
+# MongoDB values
+# See: https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
+
+architecture: standalone
+
+arbiter:
+  enabled: false
+
+# auth:
+#   enabled: true
+#   existingKeySecret: keyfilesecret
+#   existingAdminSecret: mongo-secret
+
+# resources:
+#   limits:
+#     cpu: 0.4  # 400m
+#     memory: 314Mi
+#   requests:
+#     cpu: 0.2  # 200m
+#     memory: 256Mi
+
+persistence:
+  enabled: true
+  size: 2Gi

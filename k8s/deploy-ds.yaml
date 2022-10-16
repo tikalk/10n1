@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ds
+  labels:
+    app: ds
+    project: 10n1
+spec:
+  selector:
+    matchLabels:
+      app: ds
+      project: 10n1
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ds
+        project: 10n1
+    spec:
+      serviceAccountName: 10n1
+      containers:
+        - name: ds
+          image: registry.gitlab.com/tikalk.com/innovation/10n1/ds:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4000

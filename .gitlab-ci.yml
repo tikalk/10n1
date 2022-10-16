@@ -1,0 +1,82 @@
+stages:
+  - prepare
+  - build
+#  - deploy-prod
+  - cleanup
+
+.limit_branches: &limit_branches
+  only:
+    refs:
+      - master
+      - tags
+
+Prepare:
+  stage: prepare
+  before_script:
+    - export PATH=$PATH:/home/gitlab-runner/.yarn/bin
+  script:
+    - yarn install --frozen-lockfile
+    - yarn lerna bootstrap
+    - yarn lerna run test:ci
+  interruptible: true
+  image: node:15.14.0
+  <<: *limit_branches
+
+Build-ui:
+  stage: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -f UI.Dockerfile . -t registry.gitlab.com/tikalk.com/innovation/10n1/ui
+    - docker push registry.gitlab.com/tikalk.com/innovation/10n1/ui
+    - docker rmi $(docker images -f "dangling=true" -q) || true
+  interruptible: true
+  allow_failure: false
+  image: docker:git
+  services:
+    - docker:dind
+  <<: *limit_branches
+
+Build-ds:
+  stage: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -f DS.Dockerfile . -t registry.gitlab.com/tikalk.com/innovation/10n1/ds
+    - docker push registry.gitlab.com/tikalk.com/innovation/10n1/ds
+    - docker rmi $(docker images -f "dangling=true" -q) || true
+  interruptible: true
+  allow_failure: false
+  image: docker:git
+  services:
+    - docker:dind
+  <<: *limit_branches
+
+#deploy-prod:
+#  stage: deploy-prod
+#  image: alpine:3.13
+#  before_script:
+#    - apk add --no-cache git curl bash
+#    - curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+#    - mv kustomize /usr/local/bin/
+#    - git remote set-url origin https://${CI_USERNAME}:${CI_PUSH_TOKEN}@gitlab.com/tikalk.com/innovation/10n1.git
+#    - git config --global user.email "gitlab@gitlab.com"
+#    - git config --global user.name "GitLab CI/CD"
+#  script:
+#    - git checkout -B master
+#    - git pull origin master
+#    - cd k8
+#    - kustomize edit set image $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+#    - cat kustomization.yaml
+#    - git commit -am '[skip ci] PROD image update'
+#    - git push origin master
+#  <<: *limit_branches
+##  when: manual
+
+cleanup:
+  stage: cleanup
+  script:
+    - docker rmi $(docker images -f "dangling=true" -q) || true
+  allow_failure: true
+  when: always
+  <<: *limit_branches

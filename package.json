@@ -1,0 +1,18 @@
+{
+  "name": "10n1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "husky": "^6.0.0"
+  },
+  "workspaces": [
+    "ds",
+    "ui"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
