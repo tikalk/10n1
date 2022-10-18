@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 async function db() {
-  const DB_HOST = 'production.lrcec.mongodb.net';
-  const DB_PASS = 'J*9N2qKW.6$Th.X';
+  const DB_HOST = process.env.DB_HOST || 'localhost';
+  const DB_PASS = process.env.DB_PASS || '';
 
   const DB_URL =
     process.env.NODE_ENV === 'production'
