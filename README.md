@@ -29,7 +29,6 @@ yarn dev
 ```bash
 cd ./ds 
 yarn build && yarn start # For production build
-yarn dev # For development build
 ```
 
 ### Run All Packages

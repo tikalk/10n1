@@ -31,9 +31,9 @@ export const slackCode = async (req: Request, res: Response) => {
       },
     );
     console.warn(data);
-    res.redirect(`https://10n1.tikalk.dev/registration/step3`);
+    res.redirect(`localhost:3000/registration/step3`);
   } else {
     console.warn(data);
-    res.redirect(`https://10n1.tikalk.dev/registration/step2&status=failed`);
+    res.redirect(`localhost:3000/registration/step2&status=failed`);
   }
 };
