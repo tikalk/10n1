@@ -1,0 +1,8 @@
+---
+fullnameOverride: ingress-nginx-controller
+controller:
+  dnsPolicy: ClusterFirstWithHostNet
+  hostNetwork: true
+
+  service:
+    type: ClusterIP

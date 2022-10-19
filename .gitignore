@@ -1,4 +1,7 @@
+.idea
 node_modules
 dist
-.vscode
-.next
+.env
+
+lerna-debug.log
+yarn-error.log
