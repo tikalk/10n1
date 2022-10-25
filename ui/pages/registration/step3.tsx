@@ -19,6 +19,7 @@ import { TagCloud } from 'react-tagcloud';
 import Header from '../../components/Header';
 import { UPDATE_EXPERT } from '../../graphql/mutations';
 import useAuth from '../../hooks/useAuth';
+import radar from '../../data/radar.json';
 
 const RegistrationSchema = Yup.object().shape({
   expertise: Yup.array().min(1).required(),
@@ -59,17 +60,11 @@ const Step3 = () => {
   }, [formik.values, userData]);
 
   useEffect(() => {
-    fetch('/api/radar')
-      .then((res) => res.json())
-      .then((resData) => {
-        const techs = [];
-        resData.forEach((tech, idx) => {
-          if (idx) {
-            techs.push(tech[0] || '');
-          }
-        });
-        setOptions(_.uniq(techs));
-      });
+    const techs = [];
+    radar.blips.forEach((blip) => {
+      techs.push(blip.name);
+    });
+    setOptions(_.uniq(techs));
   }, []);
 
   return (

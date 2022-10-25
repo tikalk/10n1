@@ -24,6 +24,7 @@ import Header from '../../components/Header';
 import { CREATE_EXPERT, UPDATE_EXPERT } from '../../graphql/mutations';
 import useAuth from '../../hooks/useAuth';
 import { GET_EXPERT_BY_EMAIL } from '../../graphql/queries';
+import radar from '../../data/radar.json';
 
 const RegistrationSchema = Yup.object().shape({
   name: Yup.string()
@@ -121,17 +122,11 @@ const Add = () => {
   }, [email]);
 
   useEffect(() => {
-    fetch('/api/radar')
-      .then((res) => res.json())
-      .then((resData) => {
-        const techs = [];
-        resData.forEach((tech, idx) => {
-          if (idx) {
-            techs.push(tech[0] || '');
-          }
-        });
-        setOptions(_.uniq(techs));
-      });
+    const techs = [];
+    radar.blips.forEach((blip) => {
+      techs.push(blip.name);
+    });
+    setOptions(_.uniq(techs));
   }, []);
 
   return (

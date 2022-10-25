@@ -5,3 +5,7 @@ dist
 
 lerna-debug.log
 yarn-error.log
+.env.production
+ds/.env
+k8s/k3s.yml
+ds/package-lock.json
