@@ -22,7 +22,7 @@ spec:
       serviceAccountName: 10n1
       containers:
         - name: ui
-          image: registry.gitlab.com/tikalk.com/innovation/10n1/ui:latest
+          image: ghcr.io/tikalk/ui-10n1:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
