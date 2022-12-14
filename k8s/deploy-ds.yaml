@@ -22,7 +22,7 @@ spec:
       serviceAccountName: 10n1
       containers:
         - name: ds
-          image: registry.gitlab.com/tikalk.com/innovation/10n1/ds:latest
+          image: ghcr.io/tikalk/ds-10n1:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
