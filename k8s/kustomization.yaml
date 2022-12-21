@@ -10,9 +10,3 @@ resources:
   - svc-ds.yaml
   - svc-ui.yaml
   - mongo-secret.yaml
-# helmCharts:
-#     - name: mongodb
-#       namespace: 10n1
-#       releaseName: 10n1-mongodb
-#       repo: https://charts.bitnami.com/bitnami
-#       valuesFile: ./values-mongodb.yaml
