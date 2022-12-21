@@ -26,3 +26,14 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
+          env:
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: DB_HOST
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: DB_PASS
