@@ -1,11 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
+namespace: 10n1
 resources:
-  - es-registry-credentials-10n1.yaml
+  # - es-registry-credentials-10n1.yaml
   - deploy-ds.yaml
   - deploy-ui.yaml
   - ingress.yaml
   - sa.yaml
   - svc-ds.yaml
   - svc-ui.yaml
+  - mongo-secret.yaml
+# helmCharts:
+#     - name: mongodb
+#       namespace: 10n1
+#       releaseName: 10n1-mongodb
+#       repo: https://charts.bitnami.com/bitnami
+#       valuesFile: ./values-mongodb.yaml
