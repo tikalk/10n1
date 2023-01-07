@@ -4,6 +4,15 @@ import tokenizer from 'string-tokenizer';
 import { getExpertiseList, getExpertsByExpertise } from './experts';
 import { commandNotFound } from '../helpers/slackBlocks';
 
+const CommandToFunctrionMap: {
+  // eslint-disable-next-line no-unused-vars
+  [key: string]: (req: Request, res: Response) => void;
+} = {
+  expertise: getExpertiseList,
+  experts: getExpertsByExpertise,
+  expert: getExpertsByExpertise,
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export const CommandRouter = async (req: Request, res: Response) => {
   const { text } = req.body;
@@ -12,14 +21,10 @@ export const CommandRouter = async (req: Request, res: Response) => {
     .token('command', /(expertise|experts|expert|profile|about)/)
     .resolve();
 
-  switch (payload.command) {
-    case 'expert':
-    case 'experts':
-      return getExpertsByExpertise(req, res);
-    case 'expertise':
-      return getExpertiseList(req, res);
-    default:
-      return res.json({ blocks: commandNotFound(text.split(' ')[0]) });
-    // return res.send(`Unknown command (${text.split(' ')[0]})`);
+  const func = CommandToFunctrionMap[payload.command];
+  if (func) {
+    return func(req, res);
   }
+  return res.json({ blocks: commandNotFound(text.split(' ')[0]) });
+
 };
