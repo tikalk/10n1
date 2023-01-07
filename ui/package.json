@@ -27,7 +27,7 @@
 		"moment": "^2.29.1",
 		"next": "10.0.9",
 		"next-http-proxy-middleware": "^1.0.9",
-		"node-sass": "^6.0.0",
+		"node-sass": "^8.0.0",
 		"react": "17.0.1",
 		"react-bootstrap-typeahead": "^5.1.4",
 		"react-day-picker": "^7.4.10",
@@ -40,7 +40,7 @@
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {
-		"@types/react": "^17.0.3",
+		"@types/react": "17.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"eslint": "^7.24.0",
