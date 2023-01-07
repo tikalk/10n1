@@ -153,7 +153,9 @@ const Add = () => {
                           {...formik.getFieldProps('name')}
                         />
                         {formik.errors?.name && formik.touched.name && (
-                          <FormFeedback>{formik.errors?.name}</FormFeedback>
+                          <FormFeedback>
+                            <>{formik.errors?.name}</>
+                          </FormFeedback>
                         )}
                       </FormGroup>
                     </Col>
@@ -170,7 +172,9 @@ const Add = () => {
                           {...formik.getFieldProps('phone')}
                         />
                         {formik.errors?.phone && formik.touched.phone && (
-                          <FormFeedback>{formik.errors?.phone}</FormFeedback>
+                          <FormFeedback>
+                            <>{formik.errors?.phone}</>
+                          </FormFeedback>
                         )}
                       </FormGroup>
                     </Col>
@@ -189,7 +193,9 @@ const Add = () => {
                           {...formik.getFieldProps('email')}
                         />
                         {formik.errors?.email && formik.touched.email && (
-                          <FormFeedback>{formik.errors?.email}</FormFeedback>
+                          <FormFeedback>
+                            <>{formik.errors?.email}</>
+                            </FormFeedback>
                         )}
                       </FormGroup>
                     </Col>
