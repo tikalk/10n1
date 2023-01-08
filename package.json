@@ -13,6 +13,8 @@
     "ui"
   ],
   "scripts": {
+    "dev": "lerna run dev",
+    "build": "lerna run build",
     "prepare": "husky install"
   }
 }
