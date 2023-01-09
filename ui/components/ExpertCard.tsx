@@ -83,7 +83,7 @@ const ExpertCard = ({ expert, me }: any) => {
               return (
                 <Button
                   color="success"
-                  className="mr-2 my-2 text-black"
+                  className="mr-2 my-2 text-black font-weight-bold"
                   size="sm"
                   onClick={() => window.open(url)}
                   key={`availability-btn-${slot}-${expert.id}`}
