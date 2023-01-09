@@ -1,12 +1,19 @@
 import {
   ApolloClient,
   ApolloLink,
+  DefaultOptions,
   HttpLink,
   InMemoryCache,
 } from '@apollo/client';
 
 export const cache = new InMemoryCache();
 
+const defaultOptions: DefaultOptions = {
+  watchQuery: {
+    fetchPolicy: 'no-cache',
+    errorPolicy: 'ignore',
+  },
+};
 function startApollo() {
   const DS_HOST =
     process.env.NODE_ENV === 'production' ? '10n1.tikalk.dev' : 'localhost';
@@ -35,6 +42,7 @@ function startApollo() {
   const client = new ApolloClient({
     link: ApolloLink.from([cleanTypeName, httpLink]),
     cache,
+    defaultOptions,
   });
   return client;
 }
