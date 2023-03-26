@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
     nginx.ingress.kubernetes.io/add-base-url: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-production
+#    cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/hostname: 10n1.tikalk.dev, 10n1.infra.tikalk.dev
 
 spec:
