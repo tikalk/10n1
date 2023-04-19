@@ -41,6 +41,7 @@
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {
+		"@types/react": "^18.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"eslint": "^7.24.0",
