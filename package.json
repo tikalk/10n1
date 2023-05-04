@@ -5,8 +5,8 @@
   "scripts": {
     "ui:dev": "nx run ui:dev",
     "ui:build": "nx run ui:build",
-    "ds:dev": "nx run ds:dev",
-    "ds:build": "nx run ds:build",
+    "ds:dev": "nx run @1on1/ds:dev",
+    "ds:build": "nx run @1on1/ds:build",
     "ds:start": "nx run @1on1/ds:start"
   },
   "private": true,
