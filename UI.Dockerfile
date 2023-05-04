@@ -1,4 +1,4 @@
-FROM node:14.16-alpine
+FROM node:18.12.1
 ENV PORT 3000
 
 # Create app directory
