@@ -6,7 +6,8 @@
     "ui:dev": "nx run ui:dev",
     "ui:build": "nx run ui:build",
     "ds:dev": "nx run ds:dev",
-    "ds:build": "nx run ds:build"
+    "ds:build": "nx run ds:build",
+    "ds:start": "nx run @1on1/ds:start"
   },
   "private": true,
   "devDependencies": {
