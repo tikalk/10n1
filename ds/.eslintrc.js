@@ -17,7 +17,7 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
     'max-classes-per-file': 'off',
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'warn',
     'import/extensions': 0,
   },
   settings: {
