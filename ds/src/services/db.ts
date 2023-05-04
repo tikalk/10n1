@@ -17,10 +17,6 @@ async function db() {
   );
   try {
     await mongoose.connect(DB_URL, {
-      // dbName: '10n1-development',
-      // user: 'mongoose-access',
-      // pass: DB_PASS,
-      // autoIndex: true,
     });
   } catch (err) {
     console.log(err);
