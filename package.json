@@ -1,20 +1,20 @@
 {
-  "name": "10n1",
-  "version": "1.0.0",
-  "main": "index.js",
-  "private": true,
+  "name": "1on1-nx",
+  "version": "0.0.0",
   "license": "MIT",
+  "scripts": {
+    "ui:dev": "nx run ui:dev",
+    "ui:build": "nx run ui:build",
+    "ds:dev": "nx run ds:dev",
+    "ds:build": "nx run ds:build"
+  },
+  "private": true,
+  "dependencies": {},
   "devDependencies": {
-    "lerna": "^4.0.0",
-    "husky": "^6.0.0"
+    "nx": "16.0.3",
+    "nx-cloud": "latest"
   },
   "workspaces": [
-    "ds",
-    "ui"
-  ],
-  "scripts": {
-    "dev": "lerna run dev",
-    "build": "lerna run build",
-    "prepare": "husky install"
-  }
+    "packages/*"
+  ]
 }
