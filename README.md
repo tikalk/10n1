@@ -14,18 +14,21 @@ Someone asked you to do something in technology You don't know?
 yarn
 ```
 
+## How to run it locally
+
 ### Run UI
 
 ```bash
-cd ./ui
+cd ./ui 
+yarn build
 yarn dev
 ```
 
 ### Run API
 
 ```bash
-cd ./ds
-yarn dev
+cd ./ds 
+yarn build && yarn start # For production build
 ```
 
 ### Run All Packages

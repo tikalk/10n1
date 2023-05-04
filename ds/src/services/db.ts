@@ -17,10 +17,6 @@ async function db() {
   );
   try {
     await mongoose.connect(DB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
     });
   } catch (err) {
     console.log(err);

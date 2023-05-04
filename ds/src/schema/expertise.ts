@@ -62,6 +62,6 @@ export class ExpertiseResolver {
       { $sort: { count: -1 } },
       { $limit: 100 },
     ];
-    return ExpertModel.aggregate(aggregatorOpts).exec();
+    return ExpertModel.aggregate(undefined,aggregatorOpts).exec();
   }
 }

@@ -7,9 +7,9 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint \"./\" --fix",
-		"compile-sass": "node-sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.css",
-		"minify-sass": "node-sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.min.css --output-style compressed",
-		"map-sass": "node-sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.css --source-map true",
+		"compile-sass": "sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.css",
+		"minify-sass": "sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.min.css --style compressed",
+		"map-sass": "sass assets/scss/now-ui-kit.scss assets/css/now-ui-kit.css --source-map",
 		"prestart": "yarn compile-sass && yarn minify-sass && yarn map-sass"
 	},
 	"dependencies": {
@@ -25,7 +25,7 @@
 		"jsonwebtoken": "^8.5.1",
 		"lodash": "^4.17.21",
 		"moment": "^2.29.1",
-		"next": "10.0.9",
+		"next": "12.3.4",
 		"next-http-proxy-middleware": "^1.0.9",
 		"node-sass": "^8.0.0",
 		"react": "17.0.1",
@@ -36,10 +36,12 @@
 		"react-tagcloud": "^2.1.1",
 		"react-toastify": "^7.0.4",
 		"reactstrap": "^8.9.0",
+		"sass": "^1.55.0",
 		"typescript": "^4.2.3",
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {
+		"@types/react": "^18.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"eslint": "^7.24.0",
