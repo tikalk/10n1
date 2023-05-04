@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 RUN apk add --update --no-cache python3 build-base gcc && ln -sf /usr/bin/python3 /usr/bin/python
 COPY ./yarn.lock .
-COPY ./ui/package*.json .
+COPY ./ui/package.json .
 RUN yarn install --frozen-lockfile
 
 # Bundle app source
