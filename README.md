@@ -26,5 +26,7 @@ yarn ui:dev
 ### Run API
 
 ```bash
-yarn: ds:dev
+yarn ds:build
+yarn ds:start
+```
 ```
