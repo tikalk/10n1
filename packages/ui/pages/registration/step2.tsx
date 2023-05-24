@@ -16,7 +16,6 @@ import useAuth from '../../hooks/useAuth';
 const Step2 = () => {
   const { userData } = useAuth();
   const router = useRouter();
-
   useEffect(() => {
     if (router.query?.failed) {
       toast('קבלת ההרשאות מסלאק נכשלה אנא נסה שנית', { type: 'warning' });
@@ -58,6 +57,9 @@ const Step2 = () => {
                     className="mr-3"
                   />
                   Continue registration
+                </Button>
+                <Button onClick={() => router.push('/registration/step3')}>
+                  Skip
                 </Button>
               </CardBody>
             </Card>
