@@ -5,10 +5,10 @@ ENV PORT 4000
 WORKDIR /usr/src/app/ds
 
 COPY ./yarn.lock ./
-COPY ./ds/package*.json ./
-RUN yarn install --frozen-lockfile
+COPY ./ds/package.json ./
+RUN yarn install
 
-COPY ./ds .
+COPY ./packages/ds .
 ENV NODE_ENV production
 RUN yarn run build
 

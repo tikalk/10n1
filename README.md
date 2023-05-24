@@ -19,22 +19,14 @@ yarn
 ### Run UI
 
 ```bash
-cd ./ui 
-yarn build
-yarn dev
+
+yarn ui:dev
 ```
 
 ### Run API
 
 ```bash
-cd ./ds 
-yarn build && yarn start # For production build
+yarn ds:build
+yarn ds:start
 ```
-
-### Run All Packages
-
-(From root folder)
-
-```bash
-yarn dev
 ```
