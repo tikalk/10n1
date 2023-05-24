@@ -12,7 +12,8 @@ import '../assets/css/now-ui-kit.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 Sentry.init({
-  dsn: 'https://baf201991dd4488282eaa3c505cfa1e2@o575983.ingest.sentry.io/5730638',
+  dsn:
+    'https://baf201991dd4488282eaa3c505cfa1e2@o575983.ingest.sentry.io/5730638',
   integrations: [new Integrations.BrowserTracing()],
   tracesSampleRate: 1.0,
 });

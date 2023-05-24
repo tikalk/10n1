@@ -12,10 +12,10 @@ COPY ./ui/package.json .
 RUN yarn install 
 
 # Bundle app source
-COPY ./ui .
+COPY ./packages/ui .
 
 ENV NODE_ENV production
-RUN yarn run build
+RUN yarn build
 EXPOSE 3000
 
 CMD [ "yarn", "start" ]

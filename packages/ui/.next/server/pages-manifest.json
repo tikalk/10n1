@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/experts/[email]": "pages/experts/[email].html",
+  "/api/[...alll]": "pages/api/[...alll].js",
+  "/experts/add": "pages/experts/add.html",
+  "/experts/edit/[email]": "pages/experts/edit/[email].html",
+  "/api/radar": "pages/api/radar.js",
+  "/experts": "pages/experts.html",
+  "/": "pages/index.html",
+  "/me": "pages/me.html",
+  "/registration/step3": "pages/registration/step3.html",
+  "/registration/step4": "pages/registration/step4.html",
+  "/registration/step2": "pages/registration/step2.html",
+  "/registration/step5": "pages/registration/step5.html",
+  "/api/hello": "pages/api/hello.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}

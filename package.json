@@ -4,6 +4,15 @@
   "license": "MIT",
   "scripts": {
     "ui:dev": "nx run ui:dev",
+    "ui:build": "nx run @1on1/ui:build",
+    "ds:dev": "nx run @1on1/ds:dev",
+    "ds:build": "nx run @1on1/ds:build",
+    "ds:start": "nx run @1on1/ds:start"
+  },
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "ui:dev": "nx run ui:dev",
     "ui:build": "nx run ui:build",
     "ds:dev": "nx run @1on1/ds:dev",
     "ds:build": "nx run @1on1/ds:build",

@@ -50,7 +50,7 @@ const ExpertCard = ({ expert, me }: any) => {
               <Badge
                 color="success"
                 pill
-                className="mr-2"
+                className="mr-2 text-black"
                 key={`availability-${exp.key}-${expert.id}`}
               >{`${exp.day} ${exp.startTime}-${exp.endTime}`}</Badge>
             ))}
@@ -83,7 +83,7 @@ const ExpertCard = ({ expert, me }: any) => {
               return (
                 <Button
                   color="success"
-                  className="mr-2 my-2"
+                  className="mr-2 my-2 text-black font-weight-bold"
                   size="sm"
                   onClick={() => window.open(url)}
                   key={`availability-btn-${slot}-${expert.id}`}
