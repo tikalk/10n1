@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/registration/step4": "pages/registration/step4.js",
-  "/": "pages/index.js",
+  "/registration/step3": "pages/registration/step3.js",
   "/registration/step2": "pages/registration/step2.js"
 }

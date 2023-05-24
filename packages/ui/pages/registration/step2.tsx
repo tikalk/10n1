@@ -58,7 +58,10 @@ const Step2 = () => {
                   />
                   Continue registration
                 </Button>
-                <Button onClick={() => router.push('/registration/step3')}>
+                <Button
+                  className="btn-lg"
+                  onClick={() => router.push('/registration/step3')}
+                >
                   Skip
                 </Button>
               </CardBody>
